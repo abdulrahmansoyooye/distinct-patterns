@@ -76,6 +76,7 @@ const Navbar = () => {
         {/* Authentication Component */}
         <div className="hidden md:block">
           <Auth />
+          code code code
         </div>
 
         {/* Mobile Navigation */}
