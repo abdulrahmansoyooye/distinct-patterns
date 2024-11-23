@@ -106,6 +106,15 @@ const Navbar = () => {
                   Blog
                 </Link>
               </li>
+              <li onClick={closeMenu} className="nav-list">
+                <Link
+                  href="contact/"
+                  // monitor the active link and change the color when the link is active
+                  className={isActive("/contact") ? "activeNav nav-link" : ""}
+                >
+                  Contact
+                </Link>
+              </li>
             </ul>
             {/* Zubayr should create a component to take care of the authentication buttons */}
             <Auth />
@@ -155,7 +164,7 @@ const Navbar = () => {
       </nav>
       {isOpen ? (
         <ul className={`mob-nav-links ${isOpen ? "isOpen" : ""}`}>
-          <li className="mob-nav-list">
+          <li onClick={closeMenu} className="mob-nav-list">
             <Link
               href="/"
               className={
@@ -165,7 +174,7 @@ const Navbar = () => {
               Home
             </Link>
           </li>
-          <li className="mob-nav-list">
+          <li onClick={closeMenu} className="mob-nav-list">
             <Link
               href="/about"
               className={
@@ -177,7 +186,7 @@ const Navbar = () => {
               About
             </Link>
           </li>
-          <li className="mob-nav-list">
+          <li onClick={closeMenu} className="mob-nav-list">
             <Link
               href="/products"
               className={
@@ -189,7 +198,7 @@ const Navbar = () => {
               Products
             </Link>
           </li>
-          <li className="mob-nav-list">
+          <li onClick={closeMenu} className="mob-nav-list">
             <Link
               href="/blog"
               className={
@@ -199,14 +208,26 @@ const Navbar = () => {
               Blog
             </Link>
           </li>
-          <li className="mob-nav-list">
+          <li onClick={closeMenu} className="mob-nav-list">
+            <Link
+              href="/contact"
+              className={
+                isActive("/contact")
+                  ? "activeMobNav mob-nav-link"
+                  : "mob-nav-link"
+              }
+            >
+              Contact
+            </Link>
+          </li>
+          <li onClick={closeMenu} className="mob-nav-list">
             <Link
               href="/blog"
               className={
                 isActive("/blog") ? "activeMobNav mob-nav-link" : "mob-nav-link"
               }
             >
-              {/* Zubayr fucntionalizes this part */}
+              {/* Zubayr functional this part */}
               Sign up
             </Link>
           </li>
