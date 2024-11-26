@@ -120,24 +120,63 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-
-      {/* Mobile Dropdown Menu */}
-      {isOpen && (
-        <ul className="fixed top-0 left-0 w-full h-full bg-white  flex flex-col justify-center items-center space-y-8 text-white text-xl md:hidden">
-          {navigation.map(({ name, href }, index) => (
-            <li key={`${index}-${name}`} onClick={closeMenu}>
-              <Link
-                href={href}
-                className={`${
-                  isActive(href)
-                    ? "text-[#000] bg-[#eaeaea] p-[0.5rem_1rem] rounded-lg"
-                    : "text-[#97919a]"
-                } hover:text-[#000] text-[#000] transition`}
-              >
-                {name}
-              </Link>
-            </li>
-          ))}
+      {isOpen ? (
+        <ul className={`mob-nav-links ${isOpen ? "isOpen" : ""}`}>
+          <li className="mob-nav-list">
+            <Link
+              href="/"
+              className={
+                isActive("/") ? "activeMobNav mob-nav-link" : "mob-nav-link"
+              }
+            >
+              Home
+            </Link>
+          </li>
+          <li className="mob-nav-list">
+            <Link
+              href="/about"
+              className={
+                isActive("/about")
+                  ? "activeMobNav mob-nav-link"
+                  : "mob-nav-link"
+              }
+            >
+              About
+            </Link>
+          </li>
+          <li className="mob-nav-list">
+            <Link
+              href="/products"
+              className={
+                isActive("/products")
+                  ? "activeMobNav mob-nav-link"
+                  : "mob-nav-link"
+              }
+            >
+              Products
+            </Link>
+          </li>
+          <li className="mob-nav-list">
+            <Link
+              href="/blog"
+              className={
+                isActive("/blog") ? "activeMobNav mob-nav-link" : "mob-nav-link"
+              }
+            >
+              Blog
+            </Link>
+          </li>
+          <li className="mob-nav-list">
+            <Link
+              href="/blog"
+              className={
+                isActive("/blog") ? "activeMobNav mob-nav-link" : "mob-nav-link"
+              }
+            >
+              {/* Zubayr fucntionalizes this part */}
+              Sign up
+            </Link>
+          </li>
         </ul>
       )}
     </header>
